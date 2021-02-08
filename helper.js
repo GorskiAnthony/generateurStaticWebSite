@@ -16,3 +16,21 @@ exports.createFolder = (dir) => {
 		});
 	}
 };
+
+exports.pages = (pagesFolder) => {
+	const pages = fs.readdirSync(pagesFolder, (error) => {
+		if (error) {
+			console.error(error);
+		}
+	});
+	return pages;
+};
+
+exports.createPages = (pages) => {
+	pages.map((page) => {
+		console.log(`La page ${page} est créé.`);
+		fs.writeFile(`${buildDir}/${page}.html`, page, (err) => {
+			console.error(err);
+		});
+	});
+};

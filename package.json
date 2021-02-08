@@ -1,0 +1,14 @@
+{
+	"name": "generateurSiteStatic",
+	"version": "1.0.0",
+	"description": "Generate static website",
+	"main": "index.js",
+	"author": "Anthony Gorski",
+	"scripts": {
+		"start": "nodemon index.js"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"nodemon": "^2.0.7"
+	}
+}

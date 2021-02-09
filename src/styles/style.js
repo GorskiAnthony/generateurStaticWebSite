@@ -1,6 +1,5 @@
 const style = () => /* css */ `html {
-    background-color: #3A3A3A;
-    color: #FFF;
+    background-color: #FAFAFA;
 }`;
 
 module.exports = style();

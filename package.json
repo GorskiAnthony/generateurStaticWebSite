@@ -8,17 +8,14 @@
 		"watch": "nodemon index.js",
 		"sync": "cd dist && browser-sync start --server --watch \"**/*\" ",
 		"start": "concurrently \"yarn watch\" \"yarn sync\"",
-		"parcel:build": "parcel build ./dist/* ./dist/**/* --no-minify",
-		"tailwind:build": "postcss ./src/styles/style.css -o ./src/style.css",
-		"build": "node index.js &&  yarn parcel:build"
+		"build": "node index.js && parcel build ./dist/* ./dist/**/* --no-minify"
 	},
 	"license": "MIT",
 	"dependencies": {
 		"autoprefixer": "^10.2.4",
 		"parcel-bundler": "^1.12.4",
 		"postcss": "^8.2.5",
-		"postcss-modules": "^4.0.0",
-		"tailwindcss": "^2.0.3"
+		"postcss-modules": "^4.0.0"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.26.14",

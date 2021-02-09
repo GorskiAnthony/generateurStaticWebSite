@@ -48,9 +48,9 @@ $ yarn start
 
 ### Le projet est fini ?
 
-Pas du tout, j'attend de finir le css et l'ajout de script :smile:
+Oui, disons que la v1 est fini (en plus d'être fonctionnel 🤣)
 
-Le build fonctionne, je dois rajouter le CSS et JS et puis normalement c'est good !
+Voilà un exemple : [Static website generator](https://staticwebsitegenerator.netlify.app/)
 
 ### Qui suis-je ?
 

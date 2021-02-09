@@ -11,6 +11,8 @@ La création d'un projet qui permet de générer des sites statiques.
 Il suffit de créer dans le dossier `pages` le contenu de la page cible. Par exemple :
 
 ```js
+// .src/pages/index.js
+
 const index = () => /*html*/ `
     <div>
         lorem ipsum
@@ -19,6 +21,8 @@ const index = () => /*html*/ `
 
 module.exports = index();
 ```
+
+💡 le commentaire `/*html*/` permet d'afficher de l'html dans un template string via le module : [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html)
 
 Dans l'exemple ci dessus, la cible est `index.js` qui sera in fine `index.html`
 
@@ -31,7 +35,7 @@ Il faut le fork, puis le clone et enfin
 ```shell
 $ npm install
 # OU
-$ yarn install
+$ yarn
 ```
 
 Une fois les dépendances installé, on éxécute la commande
@@ -45,6 +49,8 @@ $ yarn start
 ### Le projet est fini ?
 
 Pas du tout, j'attend de finir le css et l'ajout de script :smile:
+
+Le build fonctionne, je dois rajouter le CSS et JS et puis normalement c'est good !
 
 ### Qui suis-je ?
 

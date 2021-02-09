@@ -38,16 +38,16 @@ exports.pages = (pagesFolder) => {
 // Create pages
 exports.createPages = (pages) => {
 	pages.map((page) => {
-		this.createPage(page);
+		createPage(page);
 	});
 };
 
 // Create folder page
-exports.createPage = async (page) => {
+createPage = async (page) => {
 	// without extention .js
 	const dir = extentionFile(page);
 	const content = await require(`${pagesFolder}/${page}`);
-
+	console.log(dir);
 	// if dir = index, is not necessary to create the folder 'index'
 	if (dir === "index") {
 		fs.writeFile(
@@ -57,15 +57,18 @@ exports.createPage = async (page) => {
 				if (err) console.error(err);
 			}
 		);
+		console.log(`le dossier et la page ${page} est bien créé`);
 		return;
 	}
 
 	this.createFolder(`${buildDir}/${dir}`);
 	fs.writeFile(
 		`${buildDir}/${dir}/index.html`,
-		html({ title: dir, children: content }),
+		html({ title: title, children: content }),
 		(err) => {
 			if (err) console.error(err);
 		}
 	);
+
+	console.log(`le dossier et la page ${page} est bien créé`);
 };

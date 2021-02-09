@@ -7,14 +7,16 @@
 	"scripts": {
 		"dev:prebuild": "nodemon index.js",
 		"dev": "cd dist && browser-sync start --server --watch",
-		"start": "concurrently \"yarn run dev:prebuild\" \"yarn run dev\" "
+		"start": "concurrently \"yarn run dev:prebuild\" \"yarn run dev\"",
+		"build": "node index.js && parcel build ./dist/* ./dist/**/* --no-minify"
 	},
 	"license": "MIT",
 	"dependencies": {
-		"concurrently": "^5.3.0",
-		"nodemon": "^2.0.7"
+		"parcel-bundler": "^1.12.4"
 	},
 	"devDependencies": {
-		"browser-sync": "^2.26.14"
+		"concurrently": "^5.3.0",
+		"browser-sync": "^2.26.14",
+		"nodemon": "^2.0.7"
 	}
 }

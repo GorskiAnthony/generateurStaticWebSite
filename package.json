@@ -5,18 +5,24 @@
 	"main": "index.js",
 	"author": "Anthony Gorski",
 	"scripts": {
-		"dev:prebuild": "nodemon index.js",
-		"dev": "cd dist && browser-sync start --server --watch",
-		"start": "concurrently \"yarn run dev:prebuild\" \"yarn run dev\"",
-		"build": "node index.js && parcel build ./dist/* ./dist/**/* --no-minify"
+		"watch": "nodemon index.js",
+		"sync": "cd dist && browser-sync start --server --watch \"**/*\" ",
+		"start": "concurrently \"yarn watch\" \"yarn sync\"",
+		"parcel:build": "parcel build ./dist/* ./dist/**/* --no-minify",
+		"tailwind:build": "postcss ./src/styles/style.css -o ./src/style.css",
+		"build": "node index.js &&  yarn parcel:build"
 	},
 	"license": "MIT",
 	"dependencies": {
-		"parcel-bundler": "^1.12.4"
+		"autoprefixer": "^10.2.4",
+		"parcel-bundler": "^1.12.4",
+		"postcss": "^8.2.5",
+		"postcss-modules": "^4.0.0",
+		"tailwindcss": "^2.0.3"
 	},
 	"devDependencies": {
-		"concurrently": "^5.3.0",
 		"browser-sync": "^2.26.14",
+		"concurrently": "^5.3.0",
 		"nodemon": "^2.0.7"
 	}
 }

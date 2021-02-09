@@ -1,13 +1,15 @@
+const { create } = require("domain");
 const fs = require("fs");
 const config = require("./config");
 const html = require("./src/template/html");
+const css = require("./src/template/style");
 
-const { buildDir, title, pagesFolder } = config;
+const { buildDir, title, pagesFolder, cssFolder } = config;
 
 // Cut > .js
 extentionFile = (page) => {
-	let extention = page.split(".");
-	return extention[0];
+	let extention = page.slice(0, -3);
+	return extention;
 };
 
 // Delete folder
@@ -22,16 +24,18 @@ exports.createFolder = (dir) => {
 		fs.mkdirSync(dir, (error) => {
 			console.error(`La route n'existe pas. L'error : ${error}`);
 		});
+		console.log(`Le dossier ${dir} a été créé avec succès.`);
 	}
 };
 
-// Get pages on ./src/pages
+// Get all pages
 exports.pages = (pagesFolder) => {
 	const pages = fs.readdirSync(pagesFolder, (error) => {
 		if (error) {
 			console.error(error);
 		}
 	});
+	console.log(pages);
 	return pages;
 };
 
@@ -47,7 +51,7 @@ createPage = async (page) => {
 	// without extention .js
 	const dir = extentionFile(page);
 	const content = await require(`${pagesFolder}/${page}`);
-	console.log(dir);
+
 	// if dir = index, is not necessary to create the folder 'index'
 	if (dir === "index") {
 		fs.writeFile(
@@ -57,7 +61,6 @@ createPage = async (page) => {
 				if (err) console.error(err);
 			}
 		);
-		console.log(`le dossier et la page ${page} est bien créé`);
 		return;
 	}
 
@@ -69,6 +72,23 @@ createPage = async (page) => {
 			if (err) console.error(err);
 		}
 	);
+};
 
-	console.log(`le dossier et la page ${page} est bien créé`);
+exports.createPageCss = (page) => {
+	page.map((page) => {
+		createFileCss(page);
+	});
+};
+
+createFileCss = async (page) => {
+	const content = await require(`${cssFolder}/${page}`);
+
+	this.createFolder(`${buildDir}/styles`);
+	fs.writeFile(
+		`${buildDir}/styles/style.css`,
+		css({ children: content }),
+		(err) => {
+			if (err) console.error(err);
+		}
+	);
 };

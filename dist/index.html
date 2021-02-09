@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bienvenue !</title>
-    </head>
-    <body>
-        
-	<div>Je suis dans l'index</div>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bienvenue !</title>
+		<link rel="stylesheet" href="/styles/style.css" />
 
-    </body>
+		<script defer="">
+			console.log(
+				"%c Made With JavaScript!!",
+				"font-weight: bold; font-size: 50px;color: red; padding: 20px ; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)"
+			);
+			console.log(
+				"%c 😁 Voilà le lien du code https://github.com/GorskiAnthony/generateurStaticWebSite 😁",
+				"color: green; font-size: 15px; font-weight: bold; background-color: yellow; padding: 15px"
+			);
+		</script>
+	</head>
+	<body>
+		<header class="bg-white text-gray-900">
+			<nav
+				class="flex flex-col items-center justify-between mx-auto p-8 md:flex-row lg:w-5/6 xl:3/4"
+			>
+				<!-- SECTION : Logo -->
+				<div
+					class="mr-4 flex items-center justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-blue-500 border-blue-500"
+				>
+					coucou
+				</div>
+				<!-- !SECTION : Logo -->
+				<ul class="flex items-center justify-between uppercase">
+					<a href="#" class="mx-2 sm:mx-4 lg:mx-6">About</a>
+					<a href="#" class="mx-2 sm:mx-4 lg:mx-6">Pricing</a>
+					<a href="#" class="mx-2 sm:mx-4 lg:mx-6">Contact</a>
+				</ul>
+
+				<!-- SECTION : Login Btn -->
+				<button
+					class="rounded-sm px-4 py-2 uppercase bg-blue-500 text-white focus:outline-none"
+				>
+					Login
+				</button>
+				<!-- !SECTION : Login Btn -->
+			</nav>
+		</header>
+		<div>Je suis dans l'index</div>
+
+		<footer class="border-4 border-light-blue-500 border-opacity-100">
+			Créé par anthony gorski
+		</footer>
+	</body>
 </html>

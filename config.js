@@ -4,6 +4,7 @@ const config = {
 	title: "Bienvenue !",
 	buildDir: "./dist",
 	pagesFolder: "./src/pages",
+	cssFolder: "./src/styles",
 };
 
 module.exports = config;

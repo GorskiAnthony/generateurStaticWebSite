@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA;EACI,yBAAyB;EACzB,WAAW;AACf","file":"style.css","sourceRoot":"","sourcesContent":["html {\n    background-color: #3A3A3A;\n    color: #FFF;\n}"]}
